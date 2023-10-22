@@ -7,9 +7,16 @@ export default Home;
 
 function Home() {
     const [business, setBusiness] = useState('');
-    const [orderStatus, setOrderStatus] = useState('');
+    const [selectBusiness, setSelectBusiness] = useState('');
+    const [selectOrderStatus, setSelectOrderStatus] = useState('');
 
-    // console.log(orderStatus);
+    useEffect(() => {
+        userService.getAll().then(x => {
+            setBusiness(x)
+        });
+    }, []);
+
+    // console.log(business);
     
     return (
         <div className="p-4">
@@ -17,23 +24,30 @@ function Home() {
                 <h1>Hi {userService.userValue?.firstName}!</h1>
                 <hr/>
                 <div className="row">
-
+                    <h6>Filter Search</h6>
                     <div className="col">
                         <select 
-                        value={business}
-                        onChange={(e) => {setBusiness(e.target.value)}}
+                        value={selectBusiness}
+                        onChange={(e) => {setSelectBusiness(e.target.value)}}
                         className="form-select" aria-label="Default select example">
                             <option value=''>Select Business</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            {business && business.map(user => 
+                                <option key={user.id} value={user.id}>{user.username}</option>
+                            )}
+                            {business && !business.length &&
+                                <tr>
+                                    <td colSpan="4" className="text-center">
+                                        <div className="p-2">No Business To Display</div>
+                                    </td>
+                                </tr>
+                            }
                         </select>
                     </div>
 
                     <div className="col">
                         <select 
-                        value={orderStatus}
-                        onChange={(e) => {setOrderStatus(e.target.value)}}
+                        value={selectOrderStatus}
+                        onChange={(e) => {setSelectOrderStatus(e.target.value)}}
                         className="form-select" aria-label="Default select example">
                             <option value=''>Select Order Status</option>
                             <option value="1">One</option>
