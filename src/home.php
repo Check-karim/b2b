@@ -1,4 +1,4 @@
-<?php include('views/header.php'); $logo=''; ?>
+<?php require('../views/header.php');?>
 
 
-<?php include('views/footer.php'); ?>
+<?php require_once('../views/footer.php');?>
