@@ -1,5 +1,6 @@
 <?php require_once('./views/header.php') ?>
 <?php require_once('./views/nav.php') ?>
+<?php require_once('./DB/con.php') ?>
 
 <div class="container">
     <div class="row justify-content-around0">
@@ -12,35 +13,20 @@
         <?php require_once('./modal.php') ?>
     </div>
     <div class="row mt-5">
+        <?php require('./request/showAgent.php'); ?>
         <div class="col">
             <table class="table myTable_player">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">UserName</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                    </tr>
+                    <?php getAgent($conn); ?>
                 </tbody>
             </table>
         </div>
