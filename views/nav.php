@@ -15,8 +15,8 @@
                         href="./">Orders</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php $title == 'Orders' ? print 'active' : print '' ?>" aria-current="page"
-                        href="./">Business</a>
+                    <a class="nav-link <?php $title == 'Business' ? print 'active' : print '' ?>" aria-current="page"
+                        href="./business.php?page=Business">Business</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?php $title == 'Agent' ? print 'active' : print '' ?>" aria-current="page"

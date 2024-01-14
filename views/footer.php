@@ -27,6 +27,7 @@
 <script src="./public/js/login.js"></script>
 <script src="./public/js/logout.js"></script>
 <script src="./public/js/add_agent.js"></script>
+<script src="./public/js/add_business.js"></script>
 </body>
 
 </html>
