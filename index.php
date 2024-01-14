@@ -1,6 +1,3 @@
-<?php 
-$title = 'Home';
-?>
 <?php require_once('./views/header.php') ?>
 <?php
 $user = '';
