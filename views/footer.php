@@ -28,6 +28,7 @@
 <script src="./public/js/logout.js"></script>
 <script src="./public/js/add_agent.js"></script>
 <script src="./public/js/add_business.js"></script>
+<script src="./public/js/add_product.js"></script>
 </body>
 
 </html>

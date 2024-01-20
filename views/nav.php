@@ -22,6 +22,10 @@
                     <a class="nav-link <?php $title == 'Agent' ? print 'active' : print '' ?>" aria-current="page"
                         href="./agent.php?page=Agent">Agent</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php $title == 'Products' ? print 'active' : print '' ?>" aria-current="page"
+                        href="./products.php?page=Products">Products</a>
+                </li>
             </ul>
             <form class="d-flex">
                 <button class="btn btn-success" id='logout-user' type="submit">Logout</button>

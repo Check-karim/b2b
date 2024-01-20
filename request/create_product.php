@@ -6,22 +6,23 @@ include('../DB/con.php');
 $ok = true;
 $messages = array();
 
-$email = isset($_POST['email']) ? $_POST['email'] : '';
-$username = isset($_POST['username']) ? $_POST['username'] : '';
-$phone = isset($_POST['phone']) ? $_POST['phone'] : '';
+$qty = isset($_POST['qty']) ? $_POST['qty'] : '';
+$label = isset($_POST['label']) ? $_POST['label'] : '';
+$price = isset($_POST['price']) ? $_POST['price'] : '';
+$ref = isset($_POST['ref']) ? $_POST['ref'] : '';
 
-$sql_e = "SELECT Id FROM Business WHERE username='$username'";
+$sql_e = "SELECT rowid FROM Product WHERE ref='$ref'";
 $res_u = mysqli_query($conn, $sql_e);
 
-if ( empty($username) || empty($email) || empty($phone) )  {
+if ( empty($qty) || empty($label) || empty($price) || empty($ref) )  {
     # code...
     $ok = false;
     $messages[] = "INPUT FIELDS CANT BE EMPTY";
 } elseif (mysqli_num_rows($res_u) > 0) {
     $ok = false;
-    $messages[] = "Business already exist";
+    $messages[] = "Product already exist";
 } else {
-    $query ="INSERT INTO `Business` ( `username`,`email`,`phone`) VALUES('" . $username . "','" . $email . "','" . $phone . "') ";
+    $query ="INSERT INTO `Product` ( `ref`,`label`,`qty`,`price`) VALUES('" . $ref . "','" . $label . "','" . $qty . "','" . $price . "') ";
     $sqlcreate_agent = $conn->query($query);
 
     if ($sqlcreate_agent) {

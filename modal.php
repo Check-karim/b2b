@@ -86,3 +86,52 @@
     </div>
 </div>
 <!--  -->
+
+
+<!-- for adding Products -->
+<!-- Modal -->
+<div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create a Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row justify-content-around">
+                    <div class="col">
+                        <ul id="msg_error_create_product" class='text-center error_list'></ul>
+                        <form>
+                            <div class="mb-3">
+                                <label for="login_username" class="form-label">Reference</label>
+                                <input type="email" class="form-control" id="create_product_ref"
+                                    aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="login_username" class="form-label">Label</label>
+                                <input type="text" class="form-control" id="create_product_label"
+                                    aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="login_username" class="form-label">Price</label>
+                                <input type="number" class="form-control" id="create_product_price"
+                                    placeholder='RWF'>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="login_username" class="form-label">Qty in Stock</label>
+                                <input type="number" class="form-control" id="create_product_qty"
+                                    placeholder=''>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" id='create_prod_btn' class="btn btn-primary">Create Product</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  -->
