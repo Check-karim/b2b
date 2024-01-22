@@ -1,6 +1,13 @@
 <?php require_once('./views/header.php') ?>
+<?php
+$user = '';
+if(!isset($_COOKIE['user'])){
+    header("Location: ./login.php");
+}else{
+    $user = $_COOKIE['user'];
+}
+?>
 <?php require_once('./views/nav.php') ?>
-<?php require_once('./DB/con.php') ?>
 
 <div class="container">
     <div class="row justify-content-around0">

@@ -1,3 +1,16 @@
+<?php
+    require_once('./DB/con.php');
+
+    $getUser = "select * from  Users where username='".$user."' ";
+
+    $run_getUser = mysqli_query($conn, $getUser);
+    $accountType = '';
+    while ($row_getUser = mysqli_fetch_assoc($run_getUser)) {
+        $accountType =  $row_getUser['accountType'];
+    }
+
+?>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -10,19 +23,19 @@
                     <a class="nav-link <?php $title == 'Home' ? print 'active' : print '' ?>" aria-current="page"
                         href="./">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link <?php $title == 'Orders' ? print 'active' : print '' ?>" aria-current="page"
-                        href="./">Orders</a>
+                <li class="nav-item" style='<?php $accountType == '1' ? print 'display: none;' : print '' ?>'>
+                    <a class="nav-link <?php $title == 'Order' ? print 'active' : print '' ?>" aria-current="page"
+                        href="./order.php?page=Order">Orders</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style='<?php $accountType == '0' ? print 'display: none;' : print '' ?>'>
                     <a class="nav-link <?php $title == 'Business' ? print 'active' : print '' ?>" aria-current="page"
                         href="./business.php?page=Business">Business</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style='<?php $accountType == '0' ? print 'display: none;' : print '' ?>'>
                     <a class="nav-link <?php $title == 'Agent' ? print 'active' : print '' ?>" aria-current="page"
                         href="./agent.php?page=Agent">Agent</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" style='<?php $accountType == '0' ? print 'display: none;' : print '' ?>'>
                     <a class="nav-link <?php $title == 'Products' ? print 'active' : print '' ?>" aria-current="page"
                         href="./products.php?page=Products">Products</a>
                 </li>
