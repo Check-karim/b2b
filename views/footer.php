@@ -29,6 +29,7 @@
 <script src="./public/js/add_agent.js"></script>
 <script src="./public/js/add_business.js"></script>
 <script src="./public/js/add_product.js"></script>
+<script src="./public/js/create_order.js"></script>
 </body>
 
 </html>
