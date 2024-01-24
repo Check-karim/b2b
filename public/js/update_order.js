@@ -2,6 +2,8 @@ var Uorder = {
     btn : document.getElementById('update_order_btn'),
     state : document.getElementById('update_order_state'),
     orderId : document.getElementById('update_order_ID'),
+    prod_id : document.getElementById('update_order_product'),
+    qty : document.getElementById('update_order_qty'),
     msg_error : document.getElementById('msg_error_update_order'),
 }
 
@@ -43,7 +45,7 @@ $(Uorder.btn).click('clikc', (event)=>{
         }
     };
 
-    const requestData1 = `state=${Uorder.state.value}&orderId=${Uorder.orderId.value}`;
+    const requestData1 = `state=${Uorder.state.value}&orderId=${Uorder.orderId.value}&prod_id=${Uorder.prod_id.value}&qty=${Uorder.qty.value}`;
     request1.open('post', "./request/update_order.php");
     request1.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
 

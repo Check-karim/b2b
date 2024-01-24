@@ -70,7 +70,7 @@ if(!empty($user)){
 
                 <div class="mb-3">
                     <label for="create_order_product" class='form control'>Product Name</label>
-                    <select disabled id='create_order_product' class="form-select" aria-label="Default select example">
+                    <select disabled id='update_order_product' class="form-select" aria-label="Default select example">
                         <option value='' selected>Select Product</option>
                         <?php 
                             $getUser = "select * from  Product ";
