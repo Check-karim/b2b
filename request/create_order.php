@@ -28,6 +28,9 @@ if ( empty($qty) || empty($prod_id) || empty($business_id) || empty($agent_id) )
     $sqlcreate_agent = $conn->query($query);
 
     if ($sqlcreate_agent) {
+        $query_update ="UPDATE Product SET qty='".((int) $row->qty - (int) $qty)."' WHERE rowid='".$prod_id."' ";
+        $sqlUpdateProd = $conn->query($query_update);
+        
         $ok = true;
         $messages[] = "SUCCESS";
     } else {
