@@ -27,7 +27,7 @@ function getAgent($db){
 
             <td>'.$phone.'</td>
             <td>
-             <a href="../routes/edit_user.php?delAgent='.$username.'&delAgent_ID='.$Id.'" class="btn btn-success">
+             <a href="./agent.php?action=edit-agent&page=Agent&id='.$Id.'" class="btn btn-success">
              <img id="" value="" class="side_logo" src="./public/icon/icons8-edit-50.png" alt="">
              </a>
 

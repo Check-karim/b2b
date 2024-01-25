@@ -9,32 +9,44 @@ if(!isset($_COOKIE['user'])){
 ?>
 <?php require_once('./views/nav.php') ?>
 <?php require_once('./DB/con.php') ?>
-<?php if(isset($_GET['action']) && $_GET['action'] == 'edit-business' ) { $BusinessID = $_GET['id'] ?>
+<?php if(isset($_GET['action']) && $_GET['action'] == 'edit-businsess' ) { $BusinessID = $_GET['id'] ?>
     <div class="container">
         <div class="row justify-content-around0">
             <div class="col mt-4">
-                <h2 class='p-4'>List Of All Business</h2>
+                <h2 class='p-4'>Edit Business</h2>
             </div>
         </div>
-        <div class="row mt-5">
-            <div class="col">
-                        <ul id="msg_error_create_business" class='text-center error_list'></ul>
+        <?php 
+            $sql_e = "SELECT * FROM Business WHERE id='$BusinessID'";
+            $res_u = mysqli_query($conn, $sql_e);
+            $row = mysqli_fetch_object($res_u);
+
+        ?>
+        <div class="row justify-content-around">
+            <div class="col-6">
+                        <ul id="msg_error_update_business" class='text-center error_list'></ul>
                         <form>
                             <div class="mb-3">
                                 <label for="login_username" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="create_business_email"
+                                <input value='<?php echo $row->email ?>' type="email" class="form-control" id="update_business_email"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="login_username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="create_business_username"
+                                <input disabled value='<?php echo $row->username ?>' type="text" class="form-control" id="update_business_username"
                                     aria-describedby="emailHelp">
                             </div>
                             <div class="mb-3">
                                 <label for="login_username" class="form-label">Phone Number</label>
-                                <input type="number" class="form-control" id="create_business_phone"
+                                <input value='<?php echo $row->phone ?>' type="number" class="form-control" id="update_business_phone"
                                     placeholder='0788995882'>
                             </div>
+
+                            <div class="mb-3 text-center">
+                                <a class='btn btn-danger' id='' href="./business.php?page=Business">Cancel </a>
+                                <button class='btn btn-success' id='update_business_btn' type="submit">Update Order</button>
+                            </div>
+
                         </form>
                     </div>
                 </div>

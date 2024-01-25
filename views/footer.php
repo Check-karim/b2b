@@ -31,6 +31,8 @@
 <script src="./public/js/add_product.js"></script>
 <script src="./public/js/create_order.js"></script>
 <script src="./public/js/update_order.js"></script>
+<script src="./public/js/update_business.js"></script>
+<script src="./public/js/update_agent.js"></script>
 </body>
 
 </html>
