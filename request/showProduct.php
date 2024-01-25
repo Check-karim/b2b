@@ -34,6 +34,11 @@ function getProduct($db){
              <a href="./products.php?action=delete-product&page=Products&id='.$Id.'" class="btn btn-danger">
              <img id="" value="" class="side_logo" src="./public/icon/icons8-delete-bin-64.png" alt="">
              </a>
+
+             <a href="./products.php?action=add-product&page=Products&id='.$Id.'" class="btn btn-info m-2">
+                add
+             </a>
+
              </td>
           </tr>   
 

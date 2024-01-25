@@ -37,6 +37,7 @@
 <script src="./public/js/delete_business.js"></script>
 <script src="./public/js/delete_agent.js"></script>
 <script src="./public/js/delete_product.js"></script>
+<script src="./public/js/add_qty.js"></script>
 </body>
 
 </html>

@@ -102,6 +102,44 @@ if(!isset($_COOKIE['user'])){
                     }
                 </script>
             <?php } ?>
+            <?php if(isset($_GET['action']) && $_GET['action'] == 'add-product' ) { ?>
+                <div class="modal fade" id="onLoad" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <?php 
+                                $sql_e = "SELECT * FROM Product WHERE rowid='".$_GET['id']."'";
+                                $res_u = mysqli_query($conn, $sql_e);
+                                $row = mysqli_fetch_object($res_u);
+                            ?>
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add qty in Stock for <?php echo $row->ref ?></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row justify-content-around">
+                                    <div class="col">
+                                        <ul id="msg_error_add_product" class='text-center error_list'></ul>
+                                        
+                                        <div class="mb-3">
+                                            <input class='form-control' placeholder='Qty' type='number' id='add_product_qty' />
+                                            <input type='text' id='add_product_id' value='<?php echo $row->rowid ?>' style='display:none' />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" id='add_product_btn' class="btn btn-primary">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    window.onload = () => {
+                        $('#onLoad').modal('show');
+                    }
+                </script>
+            <?php } ?>
         </div>
         <div class="row mt-5">
             <?php require('./request/showProduct.php'); ?>
