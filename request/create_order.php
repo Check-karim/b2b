@@ -31,6 +31,9 @@ if ( empty($qty) || empty($prod_id) || empty($business_id) || empty($agent_id) )
         $query_update ="UPDATE Product SET qty='".((int) $row->qty - (int) $qty)."' WHERE rowid='".$prod_id."' ";
         $sqlUpdateProd = $conn->query($query_update);
         
+        $query_update_1 ="INSERT INTO `Stock` ( `prod_id`,`status`, `qty`, `date`) VALUES('" . $row->rowid . "','OUT','" . $qty . "', NOW()) ";
+        $sqlUpdateProd_1 = $conn->query($query_update_1);
+
         $ok = true;
         $messages[] = "SUCCESS";
     } else {

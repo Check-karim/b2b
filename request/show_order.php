@@ -14,7 +14,6 @@ function show_order($db, $aId = ''){
 
     $run_getAgent = mysqli_query($db, $getAgent);
 
-    var_dump(empty($aid));
     $p = 1;
     while ($row_getAgent = mysqli_fetch_assoc($run_getAgent)) {
         # code...

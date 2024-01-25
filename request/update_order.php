@@ -33,6 +33,10 @@ if ( empty($state) || empty($orderId) )  {
         if($state == 'RETURNED'){
             $query_update ="UPDATE Product SET qty='".((int) $row->qty + (int) $qty)."' WHERE rowid='".$prod_id."' ";
             $sqlUpdateProd = $conn->query($query_update);
+
+            $query_update_1 ="INSERT INTO `Stock` ( `prod_id`,`status`, `qty`, `date`) VALUES('" . $row_1->productId . "','IN','" . $qty . "', NOW()) ";
+            $sqlUpdateProd_1 = $conn->query($query_update_1);
+
         }
         $ok = true;
         $messages[] = "SUCCESS";

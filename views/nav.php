@@ -39,6 +39,10 @@
                     <a class="nav-link <?php $title == 'Products' ? print 'active' : print '' ?>" aria-current="page"
                         href="./products.php?page=Products">Products</a>
                 </li>
+                <li class="nav-item" style='<?php $accountType == '0' ? print 'display: none;' : print '' ?>'>
+                    <a class="nav-link <?php $title == 'Inventory' ? print 'active' : print '' ?>" aria-current="page"
+                        href="./stock.php?page=Inventory">Invetory</a>
+                </li>
             </ul>
             <form class="d-flex">
                 <button class="btn btn-success" id='logout-user' type="submit">Logout</button>

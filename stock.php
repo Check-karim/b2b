@@ -12,30 +12,24 @@ if(!isset($_COOKIE['user'])){
 <div class="container">
     <div class="row justify-content-around0">
         <div class="col mt-4">
-            <h2 class='p-4'>List Of All Products</h2>
+            <h2 class='p-4'>All Stock Inventory</h2>
         </div>
-        <div class="col mt-4">
-            <button class='btn btn-success' data-bs-toggle="modal" data-bs-target="#addProduct">Add a Product</button>
-        </div>
-        <?php require_once('./modal.php') ?>
     </div>
     <div class="row mt-5">
-        <?php require('./request/showProduct.php'); ?>
         <div class="col">
+            <?php require_once('./request/show_stock.php') ?>
             <table class="table myTable_player">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Ref</th>
-                        <th scope="col">Label</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Qty in Stock</th>
-                        <th scope="col">Total Price</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Qty </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php getProduct($conn); ?>
+                    <?php show_stock($conn); ?>
                 </tbody>
             </table>
         </div>
