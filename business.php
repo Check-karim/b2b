@@ -8,7 +8,7 @@ if(!isset($_COOKIE['user'])){
 }
 ?>
 <?php require_once('./views/nav.php') ?>
-<?php require_once('./DB/con.php') ?>
+<?php require_once('./DB/DB.php') ?>
 <?php if(isset($_GET['action']) && $_GET['action'] == 'edit-businsess' ) { $BusinessID = $_GET['id'] ?>
     <div class="container">
         <div class="row justify-content-around0">

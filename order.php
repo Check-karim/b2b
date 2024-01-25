@@ -9,7 +9,7 @@ if(!isset($_COOKIE['user'])){
 $agentID = '';
 
 if($user){
-    require_once('./DB/con.php');
+    require_once('./DB/DB.php');
     $getUser = "select * from  Users where username='".$user."' ";
 
     $run_getUser = mysqli_query($conn, $getUser);

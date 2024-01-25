@@ -8,7 +8,7 @@ if(!isset($_COOKIE['user'])){
 }
 $ID = '';
 if(!empty($user)){
-    include('./DB/con.php');
+    include('./DB/DB.php');
     $getID = "SELECT id FROM Users WHERE username='".$user."' AND accountType='0' ";
     $run_getID = mysqli_query($conn, $getID);
     while ($row_getID = mysqli_fetch_assoc($run_getID)) {

@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include('../DB/con.php');
+include('../DB/DB.php');
 
 $ok = true;
 $messages = array();

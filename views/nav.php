@@ -1,5 +1,5 @@
 <?php
-    require_once('./DB/con.php');
+    require_once('./DB/DB.php');
 
     $getUser = "select * from  Users where username='".$user."' ";
 
