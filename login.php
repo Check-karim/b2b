@@ -2,14 +2,10 @@
 $title = 'Login';
 ?>
 <?php require_once('./views/header.php') ?>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-4">
-            <img class='backgroundLogin' src="./public/images/backgroundLogin.jpg" alt="backgroundLogin">
-        </div>
-        <div class="col-md-8">
-            <div class="row justify-content-around">
-                <h3 class='text-center'>Welcome</h3>
+<div class="container-fluid bg-black" style='padding-bottom: 10%'>
+    <div class="row mb-5 pb-5 pt-5">
+            <div class="row text-center justify-content-around">
+                <h3 class='text-center'>Welcome To B2B</h3>
                 <div class="col-md-4">
                     <ul id="msg_error_login" class='text-center error_list'></ul>
                     <form>
@@ -28,7 +24,6 @@ $title = 'Login';
                     </form>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 <?php require_once('./views/footer.php') ?>

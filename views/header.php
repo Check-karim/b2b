@@ -11,6 +11,8 @@ if(isset($_GET['page'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B2B - <?php print $title ?></title>
+    <link href="./public/icon/logo.ico" rel="icon">
+	<link href="./public/icon/logo.ico" rel="apple-touch-icon">
     <link rel="stylesheet" href="./public/css/login.css">
     <link rel="stylesheet" href="./public/css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
