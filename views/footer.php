@@ -34,6 +34,9 @@
 <script src="./public/js/update_business.js"></script>
 <script src="./public/js/update_agent.js"></script>
 <script src="./public/js/update_product.js"></script>
+<script src="./public/js/delete_business.js"></script>
+<script src="./public/js/delete_agent.js"></script>
+<script src="./public/js/delete_product.js"></script>
 </body>
 
 </html>

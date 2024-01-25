@@ -63,6 +63,46 @@ if(!isset($_COOKIE['user'])){
                 <button class='btn btn-success' data-bs-toggle="modal" data-bs-target="#addAgent">ADD AGENT</button>
             </div>
             <?php require_once('./modal.php') ?>
+            <?php if(isset($_GET['action']) && $_GET['action'] == 'delete-agent' ) { ?>
+                <div class="modal fade" id="onLoad" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete Agent Account</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row justify-content-around">
+                                    <div class="col">
+                                        <ul id="msg_error_delete_agent" class='text-center error_list'></ul>
+                                        <?php 
+                                            $sql_e = "SELECT * FROM Users WHERE id='".$_GET['id']."'";
+                                            $res_u = mysqli_query($conn, $sql_e);
+                                            $row = mysqli_fetch_object($res_u);
+                                        ?>
+                                        <div class="mb-3">
+                                            <h4>
+                                                Are you sure you want to delete
+                                                <?php echo $row->username; ?>'s Account 
+                                            </h4>
+                                            <input type='text' id='delete_agent_id' value='<?php echo $row->id ?>' style='display:none' />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" id='delete_agent_btn' class="btn btn-primary">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    window.onload = () => {
+                        $('#onLoad').modal('show');
+                    }
+                </script>
+            <?php } ?>
         </div>
         <div class="row mt-5">
             <?php require('./request/showAgent.php'); ?>

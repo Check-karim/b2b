@@ -31,7 +31,7 @@ function getAgent($db){
              <img id="" value="" class="side_logo" src="./public/icon/icons8-edit-50.png" alt="">
              </a>
 
-             <a href="../routes/edit_user.php?delAgent_ID='.$Id.'" class="btn btn-danger">
+             <a href="./agent.php?action=delete-agent&page=Agent&id='.$Id.'" class="btn btn-danger">
              <img id="" value="" class="side_logo" src="./public/icon/icons8-delete-bin-64.png" alt="">
              </a>
              </td>

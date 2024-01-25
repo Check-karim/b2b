@@ -62,6 +62,46 @@ if(!isset($_COOKIE['user'])){
                 <button class='btn btn-success' data-bs-toggle="modal" data-bs-target="#addBusiness">ADD BUSINESS</button>
             </div>
             <?php require_once('./modal.php') ?>
+            <?php if(isset($_GET['action']) && $_GET['action'] == 'delete-businsess' ) { ?>
+                <div class="modal fade" id="onLoad" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Delete Business Account</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row justify-content-around">
+                                    <div class="col">
+                                        <ul id="msg_error_delete_business" class='text-center error_list'></ul>
+                                        <?php 
+                                            $sql_e = "SELECT * FROM Business WHERE id='".$_GET['id']."'";
+                                            $res_u = mysqli_query($conn, $sql_e);
+                                            $row = mysqli_fetch_object($res_u);
+                                        ?>
+                                        <div class="mb-3">
+                                            <h4>
+                                                Are you sure you want to delete
+                                                <?php echo $row->username; ?>'s Account 
+                                            </h4>
+                                            <input type='text' id='delete_business_id' value='<?php echo $row->id ?>' style='display:none' />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" id='delete_business_btn' class="btn btn-primary">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    window.onload = () => {
+                        $('#onLoad').modal('show');
+                    }
+                </script>
+            <?php } ?>
         </div>
         <div class="row mt-5">
             <?php require('./request/showBusiness.php'); ?>

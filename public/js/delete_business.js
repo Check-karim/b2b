@@ -1,12 +1,10 @@
-var business = {
-    btn : document.getElementById('create_business_btn'),
-    email : document.getElementById('create_business_email'),
-    username : document.getElementById('create_business_username'),
-    phone : document.getElementById('create_business_phone'),
-    msg_error : document.getElementById('msg_error_create_business'),
+var Dbusiness = {
+    btn : document.getElementById('delete_business_btn'),
+    id : document.getElementById('delete_business_id'),
+    msg_error : document.getElementById('msg_error_delete_business'),
 }
 
-$(business.btn).click('clikc', (event)=>{
+$(Dbusiness.btn).click('clikc', (event)=>{
     event.preventDefault();
     
     const request1 = new XMLHttpRequest();
@@ -20,11 +18,11 @@ $(business.btn).click('clikc', (event)=>{
         } catch (e) {
             console.log("could not parse json " + e);
             if (e) {
-                while (business.msg_error.firstChild) {
+                while (Dbusiness.msg_error.firstChild) {
 
-                    business
+                    Dbusiness
                         .msg_error
-                        .removeChild(business.msg_error.firstChild);
+                        .removeChild(Dbusiness.msg_error.firstChild);
                 }
                 const li = document.createElement('li');
 
@@ -32,7 +30,7 @@ $(business.btn).click('clikc', (event)=>{
                     .classList
                     .add("alert-danger");
                 li.textContent = "Error ".e;
-                business
+                Dbusiness
                     .msg_error
                     .appendChild(li);
 
@@ -40,25 +38,25 @@ $(business.btn).click('clikc', (event)=>{
         }
 
         if (responseObject) {
-            handle_create_business(responseObject);
+            handle_delete_business(responseObject);
         }
     };
 
-    const requestData1 = `phone=${business.phone.value}&email=${business.email.value}&username=${business.username.value}`;
-    request1.open('post', "./request/create_business.php");
+    const requestData1 = `id=${Dbusiness.id.value}`;
+    request1.open('post', "./request/delete_business.php");
     request1.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
 
     request1.send(requestData1);
 })
 
 // handle request
-function handle_create_business(res) {
+function handle_delete_business(res) {
     if (res.ok) {
-        while (business.msg_error.firstChild) {
+        while (Dbusiness.msg_error.firstChild) {
 
-            business
+            Dbusiness
                 .msg_error
-                .removeChild(business.msg_error.firstChild);
+                .removeChild(Dbusiness.msg_error.firstChild);
         }
         res
             .messages
@@ -68,20 +66,20 @@ function handle_create_business(res) {
                     .classList
                     .add("alert-success");
                 li.textContent = message;
-                business
+                Dbusiness
                     .msg_error
                     .appendChild(li);
             });
         setTimeout(function () {
-            location.href = "./business.php?page=Business";
-        }, 1500);
+            location.href = './business.php?page=Business';
+        }, 1000);
 
     } else {
-        while (business.msg_error.firstChild) {
+        while (Dbusiness.msg_error.firstChild) {
 
-            business
+            Dbusiness
                 .msg_error
-                .removeChild(business.msg_error.firstChild);
+                .removeChild(Dbusiness.msg_error.firstChild);
         }
         res
             .messages
@@ -91,7 +89,7 @@ function handle_create_business(res) {
                     .classList
                     .add("alert-danger");
                 li.textContent = message;
-                business
+                Dbusiness
                     .msg_error
                     .appendChild(li);
             });
