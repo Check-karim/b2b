@@ -34,13 +34,6 @@ CREATE TABLE `Business` (
   `phone` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `Business`
---
-
-INSERT INTO `Business` (`id`, `email`, `username`, `phone`) VALUES
-(1, 'rusaka@gmail.com', 'karim', '0791447409'),
-(2, 'rusaka@gmail.com', 'Brarudi', '078945684');
 
 -- --------------------------------------------------------
 
@@ -58,26 +51,6 @@ CREATE TABLE `Orders` (
   `date` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `Orders`
---
-
-INSERT INTO `Orders` (`rowid`, `businessId`, `agentId`, `productId`, `qty`, `status`, `date`) VALUES
-(2, 1, 2, 4, 30, 'PENDING', '2024-01-23 10:36:21'),
-(3, 1, 2, 3, 15, 'RETURNED', '2024-01-23 10:37:40'),
-(4, 1, 2, 4, 5, 'PENDING', '2024-01-23 10:38:17'),
-(5, 1, 2, 1, 10, 'PENDING', '2024-01-23 10:39:53'),
-(6, 1, 2, 3, 3, 'PENDING', '2024-01-23 10:40:03'),
-(7, 1, 2, 1, 3, 'PENDING', '2024-01-23 10:40:47'),
-(8, 1, 2, 1, 6, 'PENDING', '2024-01-23 10:41:13'),
-(9, 1, 2, 4, 5, 'RECEIVED', '2024-01-24 01:12:37'),
-(10, 1, 2, 1, 15, 'PENDING', '2024-01-24 01:28:41'),
-(11, 1, 2, 1, 15, 'SENT', '2024-01-24 01:28:50'),
-(12, 1, 2, 1, 15, 'RETURNED', '2024-01-24 01:29:33'),
-(13, 1, 2, 1, 15, 'RETURNED', '2024-01-24 01:30:05'),
-(14, 1, 2, 1, 15, 'RETURNED', '2024-01-24 01:30:37'),
-(15, 1, 2, 3, 5, 'RECEIVED', '2024-01-24 01:31:07'),
-(16, 2, 2, 1, 5, 'SENT', '2024-01-24 15:54:00');
 
 -- --------------------------------------------------------
 
@@ -92,18 +65,6 @@ CREATE TABLE `Product` (
   `price` text NOT NULL,
   `qty` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `Product`
---
-
-INSERT INTO `Product` (`rowid`, `ref`, `label`, `price`, `qty`) VALUES
-(1, 'Fanta', 'Fanta', '1500', '25'),
-(3, 'Citron', 'Fanta ', '1500', '20'),
-(4, 'Orange', 'Fanta ', '2500', '35'),
-(5, 'primus', 'beer', '2500', '50'),
-(6, 'Primus Petit', 'beer', '2500', '50'),
-(7, 'Primus Big', 'beer', '5000', '50');
 
 -- --------------------------------------------------------
 
@@ -159,11 +120,7 @@ CREATE TABLE `Users` (
 --
 
 INSERT INTO `Users` (`id`, `email`, `username`, `password`, `phone`, `accountType`) VALUES
-(1, 'admin@admin.com', 'admin', 'admin', NULL, 1),
-(2, 'karim@gmail.com', 'Karim', '123456', '0791447409', 0),
-(3, 'abdoul@gmail.com', 'abdoul', '123456', '0791447409', 0),
-(4, 'hakim@gmail.com', 'hakim', '123456', '0791447409', 0),
-(5, 'marah@gmail.cm', 'marah', '123456', '0785426431', 0);
+(1, 'admin@admin.com', 'admin', 'admin', NULL, 1);
 
 --
 -- Indexes for dumped tables

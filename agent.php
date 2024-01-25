@@ -45,7 +45,7 @@ if(!isset($_COOKIE['user'])){
 
                             <div class="mb-3 text-center">
                                 <a class='btn btn-danger' id='' href="./agent.php?page=Agent">Cancel </a>
-                                <button class='btn btn-success' id='update_agent_btn' type="submit">Update Order</button>
+                                <button class='btn btn-success' id='update_agent_btn' type="submit">Update Agent</button>
                             </div>
 
                         </form>

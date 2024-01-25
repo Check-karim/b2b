@@ -33,6 +33,7 @@
 <script src="./public/js/update_order.js"></script>
 <script src="./public/js/update_business.js"></script>
 <script src="./public/js/update_agent.js"></script>
+<script src="./public/js/update_product.js"></script>
 </body>
 
 </html>

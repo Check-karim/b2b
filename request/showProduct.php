@@ -27,7 +27,7 @@ function getProduct($db){
             <td>'.$qty.'</td>
             <td>'.$Price * $qty.'</td>
             <td>
-             <a href="../routes/edit_user.php?delAgent='.$ref.'&delAgent_ID='.$Id.'" class="btn btn-success">
+             <a href="./products.php?action=edit-product&page=Products&id='.$Id.'" class="btn btn-success">
              <img id="" value="" class="side_logo" src="./public/icon/icons8-edit-50.png" alt="">
              </a>
 
