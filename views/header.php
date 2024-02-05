@@ -22,4 +22,4 @@ if(isset($_GET['page'])){
     
 </head>
 
-<body>
+<body style="background-color: #0000001f;">

@@ -17,7 +17,13 @@ if ( empty($username) || empty($email) || empty($phone) )  {
     # code...
     $ok = false;
     $messages[] = "INPUT FIELDS CANT BE EMPTY";
-} elseif (mysqli_num_rows($res_u) > 0) {
+}elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $ok = false;
+    $messages[] = "Invalid email format";
+}elseif (!is_numeric($phone)) {
+    $ok = false;
+    $messages[] = "Only numeric values are allowed for number";
+}elseif (mysqli_num_rows($res_u) > 0) {
     $ok = false;
     $messages[] = "Business already exist";
 } else {

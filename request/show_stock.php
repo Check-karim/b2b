@@ -4,6 +4,7 @@ function show_stock($db){
     $getAgent .= " s.qty as qty, p.ref as prod_id";
     $getAgent .= " FROM Stock as s";
     $getAgent .= " LEFT JOIN Product as p ON p.rowid = s.prod_id";
+    $getAgent .= " GROUP BY s.rowid desc";
 
     $run_getAgent = mysqli_query($db, $getAgent);
 

@@ -18,9 +18,15 @@ if (empty($password) || empty($username) || empty($email) || empty($phone) )  {
     # code...
     $ok = false;
     $messages[] = "INPUT FIELDS CANT BE EMPTY";
+}elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $ok = false;
+    $messages[] = "Invalid email format";
 } elseif (mysqli_num_rows($res_u) > 0) {
     $ok = false;
     $messages[] = "Username already exist";
+}elseif (!is_numeric($phone)) {
+    $ok = false;
+    $messages[] = "Only numeric values are allowed for number";
 } else {
     $query ="INSERT INTO `Users` ( `username`, `password`,`email`,`phone`, `accountType`) VALUES('" . $username . "','" . $password . "','" . $email . "','" . $phone . "', '0') ";
     $sqlcreate_agent = $conn->query($query);

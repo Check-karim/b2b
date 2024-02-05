@@ -73,7 +73,6 @@ function handle_create_order(res) {
                     .msg_error
                     .appendChild(li);
             });
-        location.reload();
         setTimeout(function () {
             location.href = './';
         }, 1500);
